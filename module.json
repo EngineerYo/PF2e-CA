@@ -8,9 +8,9 @@
 		"PF2E-CA-main.js"
 	],
 
-	"url":			"https://github.com/EngineerYo/pf2eCA",
-	"manifest":		"https://github.com/EngineerYo/pf2eCA/module.json",
-	"download":		"https://github.com/EngineerYo/pf2eCA/pf2eCA.zip",
+	"url":			"https://github.com/EngineerYo/PF2e-CA",
+	"manifest":		"https://github.com/EngineerYo/PF2e-CA/module.json",
+	"download":		"https://github.com/EngineerYo/PF2e-CA/PF2e-CA.zip",
 
 	"minimumCoreVersion": "0.5.0"
 }
