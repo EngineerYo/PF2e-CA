@@ -1,11 +1,14 @@
+import {sendMessage} from './sendMessagae.js'
 import attackLookup from './../attackLookup.json'
+
+
+attackLookup = JSON.parse(attackLookup)
 
 export function attack(message) {
     let outMsg = `<div><h3 style='border-bottom: 3px solid black'>Attack</h3><div>`
 
-    const CRITICAL_SUCCESS = 2
-    const SUCCESS =     1
-    const UNASSIGNED = 0
+    const CRITICAL_SUCCESS = 1
+    const SUCCESS =     0
     const FAILURE =     -1
     const CRITICAL_FAILURE = -2
 
@@ -14,7 +17,7 @@ export function attack(message) {
         let rollTotal = message.roll.total
         let actorAC = target.actor.data.data.attributes.ac.value
 
-        let currentStep = UNASSIGNED
+        let currentStep = null
 
         if (naturalRoll != 20 && naturalRoll != 1) {
             if (rollTotal >= actorAC + 10) {
@@ -80,5 +83,42 @@ export function attack(message) {
             }
         }
 
+
+        outMsg += `<div class = 'targetPicker' data-target="${target.data._id}" data-hitType="cm">`
+        outMsg += `<div style = "color: #131516; margin-top: 4px;"`
+        outMsg += `<b>${target.name}</b>`
+        outMsg += `</div>`
+        outMsg += `<div style="border-bottom: 2px solid black; color: #131516; padding-bottom: 4px;">`
+        if (currentStep == CRITICAL_SUCCESS) {
+            outMsg += `<b style="color: #4C7D4C>`
+            outMsg += `Critically hit! ${selectedMessage}`
+            outMsg += `</b>`
+        }
+        else if (currentStep == SUCCESS) {
+            outMsg += `Hit! ${selectedMessage}`
+        }
+        else if (currentStep == FAILURE) {
+            outMsg += `Miss! ${selectedMessage}`
+        }
+        else if (currentStep == CRITICAL_FAILURE) {
+            outMsg += `<b style="color: #990000>`
+            outMsg += `Critically missed! ${selectedMessage}`
+            outMsg += `</b>`
+        }
+        else {
+            console.log(`currentStep out of bounds\t${currentStep}`)
+        }
+
+        outMsg += `</div>`
+        outMsg += `</div>`
     })
+
+    if (game.user.targets.size > 0) {
+        let chatData = {
+            user: game.user._id,
+            content: outMsg
+        }
+
+        sendMessage(chatData)
+    }
 }
