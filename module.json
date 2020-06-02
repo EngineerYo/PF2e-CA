@@ -5,7 +5,7 @@
 	"author":		"dotMarauder",
 	"version":		"1.0.0",
 	"esmodules": [
-		"PF2E-CA-main.js"
+		"PF2e-CA-main.js"
 	],
 
 	"url":			"https://github.com/EngineerYo/PF2e-CA",
