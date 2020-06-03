@@ -5,7 +5,8 @@
 	"author":		"dotMarauder",
 	"version":		"1.0.0",
 	"esmodules": [
-		"PF2e-CA-main.js"
+		"PF2e-CA-main.js",
+		"scripts/MeasuredTemplate.js"
 	],
 
 	"url":			"https://github.com/EngineerYo/PF2e-CA",
