@@ -6,7 +6,7 @@
 	"version": "1.0.1",
 
 	"url": "https://github.com/EngineerYo/PF2e-CA",
-	"manifest": "https://raw.githubusercontent.com/EngineerYo/PF2e-CA/809491054a05f3b516cd8d451321627d9949296c/module.json",
+	"manifest": "https://raw.githubusercontent.com/EngineerYo/PF2e-CA/master/module.json",
 	"download": "https://github.com/EngineerYo/PF2e-CA/archive/master.zip",
 
 	"esmodules": [
