@@ -7,7 +7,7 @@
 
 	"url": "https://github.com/EngineerYo/PF2e-CA",
 	"manifest": "https://raw.githubusercontent.com/EngineerYo/PF2e-CA/master/module.json",
-	"download": "https://raw.githubusercontent.com/EngineerYo/PF2e-CA/master/PF2e-CA.rar",
+	"download": "https://raw.githubusercontent.com/EngineerYo/PF2e-CA/master/PF2e-CA.zip",
 
 	"minimumCoreVersion": "0.5.0"
 }
