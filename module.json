@@ -9,5 +9,8 @@
 	"manifest": "https://raw.githubusercontent.com/EngineerYo/PF2e-CA/master/module.json",
 	"download": "https://github.com/EngineerYo/PF2e-CA/archive/master.zip",
 
-	"minimumCoreVersion": "0.5.0"
+	"scripts": [
+		"PF2e-CA-main.js",
+		"./scripts"
+	]
 }
