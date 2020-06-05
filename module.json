@@ -10,6 +10,11 @@
 	"download": "https://github.com/EngineerYo/PF2e-CA/archive/master.zip",
 
 	"esmodules": [
-		"PF2e-CA-main.js"
+		"PF2e-CA-main.js",
+		"scripts/attack.js",
+		"scripts/dice-total.js",
+		"scripts/MeasuredTemplate.js",
+		"scripts/save.js",
+		"scripts/sendMessage.js"
 	]
 }
