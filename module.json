@@ -1,13 +1,13 @@
 {
-	"name":			"PF2e-CA",
-	"title":		"Pathfinder 2e Combat Automation",
-	"description":	"Handles attacks and saves",
-	"author":		"dotMarauder",
-	"version":		"1.0.0",
+	"name": "PF2e-CA",
+	"title": "Pathfinder 2e Combat Automation",
+	"description": "Handles attacks and saves",
+	"author": "dotMarauder",
+	"version": "1.0.0",
 
-	"url":			"https://github.com/EngineerYo/PF2e-CA",
-	"manifest":		"https://github.com/EngineerYo/PF2e-CA/blob/master/module.json",
-	"download":		"https://github.com/EngineerYo/PF2e-CA/blob/master/PF2e-CA.rar",
+	"url": "https://github.com/EngineerYo/PF2e-CA",
+	"manifest": "https://github.com/EngineerYo/PF2e-CA/blob/master/module.json",
+	"download": "https://github.com/EngineerYo/PF2e-CA/blob/master/PF2e-CA.rar",
 
 	"minimumCoreVersion": "0.5.0"
 }
