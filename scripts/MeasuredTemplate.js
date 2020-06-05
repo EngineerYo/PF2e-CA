@@ -60,10 +60,6 @@ Hooks.on('createMeasuredTemplate', function(scene, object, data, user) {
 		})
 	}
 
-	object.test = function() {
-		console.log(`Hello! ${user} created me!\nI'm a ${object.t}!`)
-	}
-
 	object.getActors(object)
 })
 
