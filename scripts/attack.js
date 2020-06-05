@@ -4,9 +4,9 @@ export function attack(message) {
     let naturalRoll = message.roll.dice[0].rolls[0].roll
     let rollTotal = message.roll.total
 
-    let outMsg = `<div style='border-bottom: 3px solid black; padding-right: 5px; margin-bottom: 0px;'>`
-    outMsg += `<h3 style='margin-bottom: 0px; display: inline-block;'>Attack</h3>`
-    outMsg += `<h3 style='margin-bottom: 0px; float: right;'>${rollTotal}</h3>`
+    let outMsg = `<div style='display: grid; grid-template-columns: 20% 80%; border-bottom: 3px solid black; padding-right: 5px; margin-bottom: 0px;'>`
+    outMsg += `<h3 style='margin-bottom: 0px;'>Attack</h3>`
+    outMsg += `<h3 class='roll-mod' data-result='${message.roll.result}' data-total='${message.roll.total}' style='margin-bottom: 0px; text-align: right;'>${message.roll.total}`
     outMsg += `</div>`
 
     const CRITICAL_SUCCESS = 1
@@ -16,7 +16,6 @@ export function attack(message) {
 
     game.user.targets.forEach(target => {
         let actorAC = target.actor.data.data.attributes.ac.value
-
         let currentStep = null
 
         if (rollTotal >= actorAC + 10) {
@@ -153,15 +152,15 @@ export function attack(message) {
 
         let textLookup = {
              '1':   'Critical hit!',
-             '0':            'Hit!',
-            '-1':            'Miss!',
+             '0':   'Hit!',
+            '-1':   'Miss!',
             '-2':   'Critical miss!'
         }
         
-        outMsg += `<div class = 'targetPicker' data-target="${target.data._id}" data-hitType="cm" style = "background-color: ${targetRegime.color}; padding-top: 4px; padding-bottom: 2px; padding-left: 5px; padding-right: 5px; border-bottom: 2px solid black;">`
-        outMsg += `<div style = "color: #131516;">`
-        outMsg += `<b style='display: inline-block'>${target.name}</b>`
-        outMsg += `<b style='float: right'>${textLookup[finalResult]}</b>`
+        outMsg += `<div class = 'targetPicker' data-target="${target.data._id}" data-hitType="cm" style="background-color: ${targetRegime.color}; padding-top: 2px; padding-bottom: 2px; padding-left: 5px; padding-right: 5px; border-bottom: 2px solid black;">`
+        outMsg += `<div style = "color: #131516; display: grid; grid-template-columns: 60% 40%;">`
+        outMsg += `<b>${target.name}</b>`
+        outMsg += `<b style='text-align: right;'>${textLookup[finalResult]}</b>`
         outMsg += `</div>`
         outMsg += `<div style="color: #131516;">`
 

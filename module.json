@@ -4,10 +4,6 @@
 	"description":	"Handles attacks and saves",
 	"author":		"dotMarauder",
 	"version":		"1.0.0",
-	"esmodules": [
-		"PF2e-CA-main.js",
-		"scripts/MeasuredTemplate.js"
-	],
 
 	"url":			"https://github.com/EngineerYo/PF2e-CA",
 	"manifest":		"https://github.com/EngineerYo/PF2e-CA/module.json",
