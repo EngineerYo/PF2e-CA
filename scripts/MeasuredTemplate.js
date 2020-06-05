@@ -12,13 +12,13 @@ let defaultOpts = {
 Hooks.on('createMeasuredTemplate', function(scene, object, data, user) {
 	object.getActors = function(opts = defaultOpts) {
 		let gameObj = canvas.templates.get(this._id)
-		console.log(gameObj)
+		let player = game.users.get(gameObj.data.user)
 
 		// Clear target list
-		for (let token of game.user.targets) {
+		for (let token of player.targets) {
 			token.setTarget(false, {releaseOthers: false})
 		}
-		game.user.targets.clear()
+		player.targets.clear()
 
 		// Get MeasuredTemplate position
 		let posX = gameObj.x
