@@ -10,7 +10,8 @@
 	"download": "https://github.com/EngineerYo/PF2e-CA/archive/master.zip",
 
 	"scripts": [
-		"PF2e-CA-main.js",
-		"./scripts"
-	]
+		"PF2e-CA-main.js"
+	],
+
+	"compatibleCoreVersion": "0.6.0"
 }
