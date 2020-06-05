@@ -2,6 +2,9 @@ import {attack} from './scripts/attack.js'
 import {hoverDiceTotal} from './scripts/dice-total.js'
 // import {save} from './scripts/save.js'
 
+
+console.log('Help')
+
 Math.clamp = function(n, min, max) {
 	return Math.max(min, Math.min(n, max))
 }
@@ -20,4 +23,5 @@ Hooks.on('createChatMessage', (message) => {
 
 Hooks.on('renderChatLog', function() {
 	hoverDiceTotal()
+	console.log('Help')
 })
