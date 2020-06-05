@@ -10,7 +10,6 @@ let defaultOpts = {
 }
 
 Hooks.on('createMeasuredTemplate', function(scene, object, data, user) {
-	console.log(`PF2e-CA\t|\tCreated Measured Template`)
 	object.getActors = function(opts = defaultOpts) {
 		let gameObj = canvas.templates.get(this._id)
 		console.log(gameObj)

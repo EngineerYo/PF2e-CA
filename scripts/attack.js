@@ -39,7 +39,6 @@ export function attack(message) {
         }
 
         let finalResult = Math.clamp(currentStep, CRITICAL_FAILURE, CRITICAL_SUCCESS)
-        console.log(`finalResult\t${finalResult}`)
 
         let heroName = game.user.character.name
         let posHeroName = heroName
@@ -176,9 +175,6 @@ export function attack(message) {
         }
         else if (finalResult === CRITICAL_FAILURE) {
             outMsg += `${selectedMessage}`
-        }
-        else {
-            console.log(`finalResult out of bounds\t${finalResult   }`)
         }
 
         outMsg += `</div>`
