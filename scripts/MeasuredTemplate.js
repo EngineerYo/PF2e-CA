@@ -9,14 +9,14 @@ let defaultOpts = {
 	checkWalls: true
 }
 
-Hooks.on('createMeasuredTemplate', function(scene, object, data, user) {
+Hooks.on('createMeasuredTemplate', function(scene, object, result, user) {
 	object.getActors = function(opts = defaultOpts) {
 		let gameObj = canvas.templates.get(this._id)
 		let player = game.users.get(gameObj.data.user)
 
 		// Clear target list
 		for (let token of player.targets) {
-			token.setTarget(false, {releaseOthers: false})
+			token.setTarget(false, {user: player, releaseOthers: false})
 		}
 		player.targets.clear()
 
@@ -54,10 +54,14 @@ Hooks.on('createMeasuredTemplate', function(scene, object, data, user) {
 		})
 
 		// Select tokens
-		filteredTokens.forEach(token => {
-			token.setTarget(true, {user: game.user, releaseOthers: false})
-			game.user.targets.add(token)
-		})
+		console.log(`I am ${player.data.name} and I endorse this message`)
+		for (let token of filteredTokens) {
+			player.targets.add(token)
+		}
+		// filteredTokens.forEach(token => {
+		// 	token.setTarget(true, {user: player, releaseOthers: false})
+		// 	player.targets.add(token)
+		// })
 	}
 
 	object.getActors(object)
@@ -65,8 +69,4 @@ Hooks.on('createMeasuredTemplate', function(scene, object, data, user) {
 
 Hooks.on('ready', function() {
 	console.log(`PF2e-CA\t|\tReady`)
-	for (let templateData of game.scenes.entities[0].data.templates) {
-		let gameObj = canvas.templates.get(templateData._id)
-		gameObj.delete()
-	}
 })

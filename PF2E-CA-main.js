@@ -5,7 +5,7 @@ Math.clamp = function(n, min, max) {
 	return Math.max(min, Math.min(n, max))
 }
 
-Hooks.on('createChatMessage', (message) => {
+Hooks.on('createChatMessage', function(message) {
 	if (game.combat == null || game.users.entities.find(user => user.isGM)._id || game.combat.combatant.players[0].data._id === game.user._id) {
 		if (message.data.flavor == undefined) {
 			return
