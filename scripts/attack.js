@@ -104,7 +104,7 @@ export function attack(message) {
                 color:  '#D0E0E3',
                 messages: [
                     {weight: 10, text: `${posHeroName} strike was well placed.`},
-                    {weight: 10, text: `Another solid hit by ${posHeroName}.`}
+                    {weight: 10, text: `Another solid hit by ${heroName}.`}
                 ]
             },
             {
