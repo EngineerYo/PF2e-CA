@@ -1,5 +1,5 @@
 import {attack} from './scripts/attack.js'
-import {hoverDiceTotal} from './scripts/dice-total.js'
+import {mouseOverFunctions} from './scripts/mouseOver.js'
 
 Math.clamp = function(n, min, max) {
 	return Math.max(min, Math.min(n, max))
@@ -18,6 +18,6 @@ Hooks.on('createChatMessage', function(message) {
 	}
 })
 
-Hooks.on('renderChatLog', function() {
-	hoverDiceTotal()
+Hooks.on('ready', function() {
+	mouseOverFunctions()
 })
