@@ -12,7 +12,7 @@
 	"esmodules": [
 		"PF2e-CA-main.js",
 		"scripts/attack.js",
-		"scripts/dice-total.js",
+		"scripts/mouseOver.js",
 		"scripts/MeasuredTemplate.js",
 		"scripts/save.js",
 		"scripts/sendMessage.js"
