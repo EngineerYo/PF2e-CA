@@ -156,7 +156,7 @@ export function attack(message) {
             '-2':   'Critical miss!'
         }
         
-        outMsg += `<div class = 'targetPicker' data-target="${target.data._id}" data-hitType="cm" style="background-color: ${targetRegime.color}; padding-top: 2px; padding-bottom: 2px; padding-left: 5px; padding-right: 5px; border-bottom: 2px solid black;">`
+        outMsg += `<div class = 'targetPicker' data-target="${target.data._id}" style="background-color: ${targetRegime.color}; padding-top: 2px; padding-bottom: 2px; padding-left: 5px; padding-right: 5px; border-bottom: 2px solid black;">`
         outMsg += `<div style = "color: #131516; display: grid; grid-template-columns: 60% 40%;">`
         outMsg += `<b>${target.name}</b>`
         outMsg += `<b style='text-align: right;'>${textLookup[finalResult]}</b>`
