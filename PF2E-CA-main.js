@@ -10,7 +10,9 @@ Hooks.on('createChatMessage', function(message) {
 		if (message.data.flavor == undefined) {
 			return
 		}
-		if (message.data.flavor.includes('Attack Roll') && message.data.user == game.user.data._id) {
+
+		console.log(message)
+		if ( (message.data.flavor.includes('Attack Roll') || message.data.flavor.includes('Strike:')) && message.data.user == game.user.data._id) {
 			attack(message)
 		}
 	}

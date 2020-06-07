@@ -3,7 +3,7 @@
 	"title": "Pathfinder 2e Combat Automation",
 	"description": "Handles attacks and saves",
 	"author": "dotMarauder",
-	"version": "1.0.3",
+	"version": "1.0.4",
 
 	"url": "https://github.com/EngineerYo/PF2e-CA",
 	"manifest": "https://raw.githubusercontent.com/EngineerYo/PF2e-CA/master/module.json",

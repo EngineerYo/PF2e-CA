@@ -9,14 +9,14 @@ let defaultOpts = {
 	checkWalls: true
 }
 
-Hooks.on('createMeasuredTemplate', function(scene, object, result, user) {
+Hooks.on('createMeasuredTemplate', function(scene, object, result, userID) {
 	object.getActors = function(opts = defaultOpts) {
 		let gameObj = canvas.templates.get(this._id)
-		let player = game.users.get(gameObj.data.user)
+		let player = game.users.get(userID)
 
 		// Clear target list
 		for (let token of player.targets) {
-			token.setTarget(false, {user: player, releaseOthers: false})
+			token.setTarget(false, {user: player})
 		}
 		player.targets.clear()
 
@@ -54,14 +54,12 @@ Hooks.on('createMeasuredTemplate', function(scene, object, result, user) {
 		})
 
 		// Select tokens
-		console.log(`I am ${player.data.name} and I endorse this message`)
 		for (let token of filteredTokens) {
 			player.targets.add(token)
+			token.setTarget(true, {user: player, releaseOthers: false})
 		}
-		// filteredTokens.forEach(token => {
-		// 	token.setTarget(true, {user: player, releaseOthers: false})
-		// 	player.targets.add(token)
-		// })
+
+		return filteredTokens
 	}
 
 	object.getActors(object)
