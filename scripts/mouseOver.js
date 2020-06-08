@@ -1,15 +1,15 @@
 export function mouseOverFunctions() {
 	console.log(`PF2e-CA\t|\tmouseOverFunctions\t|\tReady`)
 
-	$('.roll-mod').mouseover(function(event) {
-		event.target.innerHTML = event.target.getAttribute('data-result')
+	$('#chat-log').on('mouseover', '.roll-mod', function(e) {
+		e.target.innerHTML = e.target.getAttribute('data-result')
 	})
-	$('.roll-mod').mouseleave(function(event) {
-		event.target.innerHTML = event.target.getAttribute('data-total')
+	$('#chat-log').on('mouseleave', '.roll-mod', function(e) {
+		e.target.innerHTML = e.target.getAttribute('data-total')
 	})
 
-	$('.targetPicker').mouseover(function(e) {
-		if (event.target != event.currentTarget) {
+	$('#chat-log').on('mouseover', '.targetPicker', function(e) {
+		if (e.target != e.currentTarget) {
 			return
 		}
 
@@ -18,8 +18,8 @@ export function mouseOverFunctions() {
 
 		actorObj._onHoverIn()
 	})
-	$('.targetPicker').mouseleave(function(e) {
-		if (event.target != event.currentTarget) {
+	$('#chat-log').on('mouseleave', '.targetPicker', function(e) {
+		if (e.target != e.currentTarget) {
 			return
 		}
 
@@ -28,4 +28,20 @@ export function mouseOverFunctions() {
 
 		actorObj._onHoverOut()
 	})
-}	
+
+	$('#chat-log').on('click', '.targetPicker', function(e) {
+		let content = $(e.currentTarget).find('.content')[0]
+
+		// Collapsed
+		if (content.style.display == 'none') {
+			content.style.display = 'inline'
+		}
+
+		// Expanded
+		else {
+			content.style.display = 'none'
+		}
+	})
+
+	
+}
