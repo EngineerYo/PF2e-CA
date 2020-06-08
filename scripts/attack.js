@@ -4,8 +4,17 @@ export function attack(message) {
     let naturalRoll = message.roll.dice[0].rolls[0].roll
     let rollTotal = message.roll.total
 
-    let outMsg = `<div style='display: grid; grid-template-columns: 20% 80%; border-bottom: 3px solid black; padding-right: 5px; margin-bottom: 0px;'>`
+    let outMsg = ``
+    
+    // Attack roll
+    outMsg += `<div style='display: grid; grid-template-columns: 20% 80%; border-bottom: 3px solid black; padding-right: 5px; margin-bottom: 0px;'>`
     outMsg += `<h3 style='margin-bottom: 0px;'>Attack</h3>`
+    outMsg += `<h3 class='roll-mod' data-result='${message.roll.result}' data-total='${message.roll.total}' style='margin-bottom: 0px; text-align: right;'>${message.roll.total}`
+    outMsg += `</div>`
+
+    // Damage roll
+    outMsg = `<div style='display: grid; grid-template-columns: 20% 80%; border-bottom: 3px solid black; padding-right: 5px; margin-bottom: 0px;'>`
+    outMsg += `<h3 style='margin-bottom: 0px;'>Damage</h3>`
     outMsg += `<h3 class='roll-mod' data-result='${message.roll.result}' data-total='${message.roll.total}' style='margin-bottom: 0px; text-align: right;'>${message.roll.total}`
     outMsg += `</div>`
 
@@ -156,7 +165,8 @@ export function attack(message) {
             '-2':   'Critical miss!'
         }
         
-        outMsg += `<div class = 'targetPicker' data-expanded=false data-target="${target.data._id}" style="overflow: hidden; background-color: ${targetRegime.color}; padding-top: 2px; padding-bottom: 2px; padding-left: 5px; padding-right: 5px; border-bottom: 2px solid black;">`
+        outMsg += `<div class = 'targetPicker' data-collapsed=false data-target="${target.data._id}" style="background-color: ${targetRegime.color};">`
+        outMsg += `<div class = 'base-target-data'>`
         outMsg += `<div style = "color: #131516; display: grid; grid-template-columns: 60% 40%;">`
         outMsg += `<b>${target.name}</b>`
         outMsg += `<b style='text-align: right;'>${textLookup[finalResult]}</b>`
@@ -178,6 +188,8 @@ export function attack(message) {
         }
 
         outMsg += `</div>`
+        outMsg += `</div>`
+        outMsg += `<div class='content' style='display: none; height:100px;'><button>Hi</button><button>Yeah, right..</button></div>`
         outMsg += `</div>`
     })
 
