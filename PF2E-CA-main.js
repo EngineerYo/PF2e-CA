@@ -16,8 +16,16 @@ Hooks.on('createChatMessage', function(message) {
 			attack(message)
 		}
 	}
+	
+	// mouseOverFunctions()
 })
 
 Hooks.on('ready', function() {
+	console.log('willReady')
 	mouseOverFunctions()
+
+	Item.rollWeaponDamage = function() {
+		console.log('Hello!')
+	}
 })
+
