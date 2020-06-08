@@ -16,5 +16,9 @@
 		"scripts/MeasuredTemplate.js",
 		"scripts/save.js",
 		"scripts/sendMessage.js"
+	],
+
+	"styles": [
+		"styles/stylesheet.css"
 	]
 }
